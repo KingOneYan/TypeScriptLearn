@@ -10,3 +10,8 @@ function sum ( a :number , b:number ) : number {
 
 // console.log(sum(123,'456')) // Argument of type 'string' is not assignable to parameter of type 'number'
 // console.log(sum(123,456 , 789)) // Expected 2 arguments, but got 3.
+
+/**
+ * 打包命令
+ * tsc [fileName]
+ */
