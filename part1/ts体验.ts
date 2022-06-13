@@ -14,4 +14,5 @@ function sum ( a :number , b:number ) : number {
 /**
  * 打包命令
  * tsc [fileName]
+ * 将ts编译成js
  */

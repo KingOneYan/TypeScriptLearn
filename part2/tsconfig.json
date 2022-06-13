@@ -1,0 +1,14 @@
+{
+  /**
+   * TS编译器的配置文件
+   */
+  "include": [
+    "./src/**/*" //一个*表示任意文件,两个*表示任意目录，这里表示src下的任意目录下的任意文件
+  ],
+  "exclude": [
+    //default: ["node_modules","bower_components","jspm_packages"]
+    "./src/exclude"
+  ],
+//  "extends": "", // 继承文件
+//  "files": [] // 指定被编译的文件
+}
