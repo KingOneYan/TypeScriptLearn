@@ -11,4 +11,20 @@
   ],
 //  "extends": "", // 继承文件
 //  "files": [] // 指定被编译的文件
+  /*
+  编译器选项
+  */
+  "compilerOptions": {
+
+    //target用来指定ts被编译成es的版本
+    "target": "ES2021",
+    //module指定要用的模块化规范,system才能使用outFiles配置
+    "module": "system",
+    //lib用来指定项目中要使用的库，一般不需要设置
+//    "lib": []
+    //outDir用来指定编译后的文件存放位置
+    "outDir": "dist",
+    //将代码合并成一个文件
+//    "outFile": "dist/concat"
+  }
 }
