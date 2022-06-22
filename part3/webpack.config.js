@@ -4,13 +4,41 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname,'dist'),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        // 告诉webpack不使用箭头函数，ie不支持
+        environment: {
+            arrowFunction: false
+        }
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use:'ts-loader',
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets:[
+                                [
+                                    //指定环境插件
+                                    "@babel/preset-env",
+                                    {
+                                        //要兼容的目标浏览器
+                                        targets: {
+                                            "chrome" : "88",
+                                            "ie":"11"
+                                        },
+                                        //指定corejs版本
+                                        "corejs":"3",
+                                        //使用corejs方式
+                                        //usage表示按需加载
+                                        "useBuiltIns":"usage"
+                                    }
+                                ]
+                            ]
+                        }
+                    },
+                    'ts-loader'],
                 exclude: /node_modules/
             }
         ]
