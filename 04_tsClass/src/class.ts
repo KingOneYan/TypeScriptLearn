@@ -1,16 +1,25 @@
 
 abstract class Animal {
     name: string = 'one';
-    animalName: string;
     //静态属性，通过直接访问class
     static staticProperty : string = 'staticProperty';
 
     readonly readonly : string = 'readonly'
 
+    //只能当前类访问
+    // private privateProperty : String;
+
+    // 只能类和子类访问
+    // protected protectedProperty : String;
+
     //构造器
-    constructor(animalName:string) {
-        this.animalName = animalName
+    //构造器里对参数增加public/private/protected, 然后类里不定义这个变量,会自动帮我们赋值 -》语法糖
+    constructor(public animalName:string) {
     }
+
+    // getPrivateProperty(){
+    //     return this.privateProperty
+    // }
 
     sayHello(){
         console.log('i am animals')
